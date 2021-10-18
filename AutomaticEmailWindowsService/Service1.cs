@@ -118,7 +118,7 @@ namespace AutomaticEmailWindowsService
                     string email = row["Email"].ToString();
                     WriteToFile("Trying to send email to: " + name + " " + email);
 
-                    using (MailMessage mm = new MailMessage("shohan.mirja@gmail.com", email))
+                    using (MailMessage mm = new MailMessage("sender@gmail.com", email))
                     {
                         mm.Subject = "Birthday Greetings";
                         mm.Body = string.Format("<b>Happy Birthday </b>{0}<br /><br />Many Many happy returns of the day.", name);
@@ -128,8 +128,8 @@ namespace AutomaticEmailWindowsService
                         smtp.Host = "smtp.gmail.com";
                         smtp.EnableSsl = true;
                         System.Net.NetworkCredential credentials = new System.Net.NetworkCredential();
-                        credentials.UserName = "shohan.mirja@gmail.com";
-                        credentials.Password = "google9874105";
+                        credentials.UserName = "sender@gmail.com";
+                        credentials.Password = "password";
                         smtp.UseDefaultCredentials = true;
                         smtp.Credentials = credentials;
                         smtp.Port = 587;
